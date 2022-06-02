@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">FESTO</a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Most Relevant</a></li>
+            <li><a class="dropdown-item" href="#">Popularity</a></li>
+            <li><a class="dropdown-item" href="#">Most Recent</a></li>
+            <li><a class="dropdown-item" href="#">Oldest</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchText" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="row gy-3 my-3">
+  <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor="let course of responses">
+    <div class="card">
+      <img src="{{fetchImage(course)}}" class="card-img-top" alt="image">
+      <div class="card-body">
+        <h5 class="card-title">{{course.name}}</h5>
+        <p class="card-text" style="color:#c2c2c2;">By {{course.publisher.name}}</p>
+      </div>
+      <div>
+        <a href="#" type="text" class="show-more">Show More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
